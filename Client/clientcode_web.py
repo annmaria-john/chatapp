@@ -41,6 +41,7 @@ def update_dropdown():
     selected_option_width = max(len(option[0]) for option in options) + 2
     dropdown.config(width=selected_option_width)
 
+#VULNERABLE
 #Function to send a file to the server when the File button is clicked
 #The filename is sent first in json format and the file is sent after. Finally, a message that the user sent the file is displayed in the message textbox.
 def send_file():
@@ -65,6 +66,7 @@ def send_file():
         except Exception as e:
             messagebox.showerror("File Transfer Error", str(e))
 
+#VULNERABLE
 # This function is used to send a message from client to other clients. Based on the client, rsa encryption is performed here
 # and the message is sent as json object.
 def send_message():
