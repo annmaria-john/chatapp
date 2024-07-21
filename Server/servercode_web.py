@@ -33,6 +33,7 @@ async def send_to_servers(msg):
             tasks.append(send_to_server(server, msg))
     await asyncio.gather(*tasks)
 
+#VULNERABLE
 #Function which establishes the s2s connection, and retries the connection every 5 seconds
 async def send_to_server(server, msg):
     global t
@@ -111,7 +112,7 @@ async def send_messages(msg,recp,username):
                 else:
                     print("Recipient not found")
 
-
+#VULNERABLE
 # This function is used to receive a file from the client and forward it to the intended recipient.
 async def receive_file(client, file_name, recipient,username):
     with open(file_name, "wb") as file:
@@ -276,7 +277,7 @@ async def server_listen(server_client, port):
             print("Error in received object ", e )
             print("Type is", type(e))
 
-
+#This function is similar to the client_handler, but handles requests for server to server communication.
 async def s2s_handler(server_client):
     try:
             json_objd = await server_client.recv()
@@ -335,7 +336,7 @@ async def s2s_handler(server_client):
                 print("Presence message neither message is not sent!")
     except ConnectionResetError:
         print("Connection Reset Error")
-
+#VULNERABLE
 # When the client joins with a username, a public private key pair is generated and the private key is sent back to the user and the public key is sent to everyone.
 # The S2S communication The joining message is sent to the clients and the joining message is sent.
 async def client_handler(client):
