@@ -9,10 +9,10 @@
 1.	Install python3 on your local machine.
 2.	Download the zip file and extract the chat app folder. There should be two folders – client and server.
 3.	Inside the two folders there is the client and server python code. For each python code you need to install the following dependencies using “pip install” - 
-a.	rsa
-b.	websockets
-c.	asyncio
-d.	tkinter
+-	rsa
+-	websockets
+-	asyncio
+-	tkinter
 4.	Open the terminal and change to client directory to run the client code – 
 python clientcode_web.py
 5.	Open the terminal and change to server directory to run the server code – 
@@ -21,25 +21,25 @@ python servercode_web.py
 
 #### Configuration
 1.	Client to server(only)
-a.	Run the server code with the following optional parameters
+*	Run the server code with the following optional parameters
 python servercode_web.py –host <IP Address> --port <port number>
-b.	The host parameter is the IP address of your server and the port number is the port where the server listens.
-c.	Run the client code with the following optional parameters
+*	The host parameter is the IP address of your server and the port number is the port where the server listens.
+*	Run the client code with the following optional parameters
 python clientcode_web.py --host <IP Address> --port <port number>
-d.	The host parameter is the IP address of your client and the port number is the port where the client connects.
+*	The host parameter is the IP address of your client and the port number is the port where the client connects.
 2.	Client to server to server to client
-a.	Run the server code with the following required parameters
+*	Run the server code with the following required parameters
 python servercode_web.py. 
-b.	This opens up our first server on port 8080(for client connections) and port 5050(for server to server connections)
-c.	Run the server code with the following required parameters
+*	This opens up our first server on port 8080(for client connections) and port 5050(for server to server connections)
+*	Run the server code with the following required parameters
 python servercode_web.py --port 2020 --serverport 5051
-d.	This opens up our second server on port 2020(for client connections) and port 5051(for server to server connections)
-e.	Run the client code 
+*	This opens up our second server on port 2020(for client connections) and port 5051(for server to server connections)
+*	Run the client code 
 python clientcode_web.py 
-f.	The first client by default connects to the port 8080
-g.	Run the client code with the following required parameters
+*	The first client by default connects to the port 8080
+*	Run the client code with the following required parameters
 python clientcode_web.py --port 2020 
-h.	This opens up the second client which connects to the port 2020
+*	This opens up the second client which connects to the port 2020
 
 #### Assumptions
 1.	Server to Server communication can handle only 1-1 messages and 1-all messages(no file sharing and group messaging)
